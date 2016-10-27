@@ -32,6 +32,7 @@ time                 event_name host    parent_process_id process_id process_nam
 Example limiting the query to a time frame and a certain process:
 
 ```
-select * from processes..lifecycle WHERE time > '2016-10-27T20:21:00Z'
-   AND time < '2016-10-27T20:21:00Z' + 1m AND process_name = 'git.exe'
+select * from processes..lifecycle
+   WHERE time > '2016-10-27T20:21:00Z' AND time < '2016-10-27T20:21:00Z' + 1m
+   AND process_name = 'git.exe'
 ```
