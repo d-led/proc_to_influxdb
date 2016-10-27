@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="observable_win_process" GeneratedClassName="app">
+  <Profiles />
+  <Settings>
+    <Setting Name="InfluxUri" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:8086</Value>
+    </Setting>
+    <Setting Name="InfluxUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="InfluxPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="InfluxDb" Type="System.String" Scope="User">
+      <Value Profile="(Default)">processes</Value>
+    </Setting>
+    <Setting Name="InfluxMeasurement" Type="System.String" Scope="User">
+      <Value Profile="(Default)">lifecycle</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
