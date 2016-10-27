@@ -10,13 +10,13 @@ namespace observable_win_process
         readonly string db;
         readonly string table;
 
-        public InfluxDbProcessObserver(string url,string db, string table)
+        public InfluxDbProcessObserver(string url, string db, string table, string username, string password)
         {
             this.url = url;
             this.db = db;
             this.table = table;
 
-            InitializeMeasurement();
+            InitializeMeasurement(username, password);
         }
 
         public void Write(ProcessObservation o)
@@ -34,13 +34,13 @@ namespace observable_win_process
             );
         }
 
-        void InitializeMeasurement()
+        void InitializeMeasurement(string username = null, string password = null)
         {
             //singleton for now
             Metrics.Collector = new CollectorConfiguration()
                .Tag.With("host", Environment.GetEnvironmentVariable("COMPUTERNAME"))
                .Batch.AtInterval(TimeSpan.FromSeconds(1))
-               .WriteTo.InfluxDB(url, db)
+               .WriteTo.InfluxDB(url, db, username, password)
                .CreateCollector();
         }
     }

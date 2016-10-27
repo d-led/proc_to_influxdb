@@ -24,7 +24,14 @@ namespace observable_win_process
         {
             var settings = app.Default;
 
-            var influx = new InfluxDbProcessObserver(settings.InfluxUri, settings.InfluxDb, settings.InfluxMeasurement);
+            var authenticate = !string.IsNullOrWhiteSpace(settings.InfluxUser);
+
+            var influx = new InfluxDbProcessObserver(
+                settings.InfluxUri,
+                settings.InfluxDb,
+                settings.InfluxMeasurement,
+                authenticate ? settings.InfluxUser : null,
+                authenticate ? settings.InfluxPassword : null);
 
             var observations = new ProcessObservationSource().AsObservable;
 
