@@ -1,5 +1,7 @@
 # winproc_to_influxdb
 
+> ever wondered what processes are being started and stopped on your machine?
+
 observe windows process starts and stops via [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/), [influxdb-csharp](https://github.com/influxdata/influxdb-csharp), [WqlEventQuery](), with the code cleaning help of [Reactive Extensions](https://github.com/Reactive-Extensions/Rx.NET).
 
 ## query in InfluxDB
