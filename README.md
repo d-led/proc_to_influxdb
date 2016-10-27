@@ -28,3 +28,9 @@ time                 event_name host    parent_process_id process_id process_nam
 1477598434121334016  stopped    PING2   0                 14300      cmd.exe                131220720341203132
 1477598434121334016  stopped    PING2   0                 7172       conhost.exe            131220720341208197
 ```
+
+Example limiting the query to a time frame:
+
+```
+select * from processes..lifecycle WHERE time > '2016-10-27T20:21:00Z' AND time < '2016-10-27T20:21:00Z' + 1m
+```
