@@ -35,7 +35,7 @@ namespace observable_win_process
 
             var observations = new ProcessObservationSource().AsObservable;
 
-            observations.Subscribe(influx.Write);
+            observations.Subscribe(influx.Write, Console.Error.WriteLine, () => { });
 
             observations.Subscribe(ToConsole);
 

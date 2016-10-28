@@ -28,7 +28,7 @@ namespace observable_win_process
                 ProcessName = o.Properties["ProcessName"].Value.ToString(),
                 ParentProcessID = uint.Parse(o.Properties["ParentProcessID"].Value.ToString()),
                 ProcessID = uint.Parse(o.Properties["ProcessID"].Value.ToString()),
-                TimeCreated = ulong.Parse(o.Properties["TIME_CREATED"].Value.ToString())
+                TimeCreated = DateTime.FromFileTime(long.Parse(o.Properties["TIME_CREATED"].Value.ToString())).ToUniversalTime()
             });
         }
 

@@ -1,4 +1,6 @@
-﻿namespace observable_win_process
+﻿using System;
+
+namespace observable_win_process
 {
     public sealed class ProcessObservation
     {
@@ -6,6 +8,6 @@
         public uint ParentProcessID { get; set; }
         public uint ProcessID { get; set; }
         public string ProcessName { get; internal set; }
-        public ulong TimeCreated { get; set; }
+        public DateTime TimeCreated { get; set; }
     }
 }

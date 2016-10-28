@@ -1,4 +1,4 @@
-# winproc_to_influxdb
+# proc_to_influxdb
 
 > ever wondered what processes are being started and stopped on your machine?
 
@@ -17,16 +17,20 @@ and running the application (requires administration rights)
 query, in the InfluxDB UI ([@localhost](http://localhost:8083/)):
 
 ```
-> select * from processes..lifecycle
+> select * from processes..lifecycle order by time desc limit 10
 name: lifecycle
 ---------------
-time                 event_name host    parent_process_id process_id process_name           time_created
-1477598421130892032  stopped    PING2   0                 7220       dllhost.exe            131220720211128846
-1477598421153912064  stopped    PING2   0                 11044      dllhost.exe            131220720211138838
-1477598422114627840  started    PING2   5992              10676      SearchFilterHost.exe   131220720221136314
-1477598422114627840  started    PING2   5992              12640      SearchProtocolHost.exe 131220720221136313
-1477598434121334016  stopped    PING2   0                 14300      cmd.exe                131220720341203132
-1477598434121334016  stopped    PING2   0                 7172       conhost.exe            131220720341208197
+time                event_name host  parent_process_id process_id process_name
+1477664284913589760 stopped    PING2 0                 13888      dllhost.exe
+1477664283913088768 stopped    PING2 0                 5344       dllhost.exe
+1477664279910585088 stopped    PING2 0                 7660       nvtray.exe
+1477664278912537600 stopped    PING2 0                 13624      nvtray.exe
+1477664278912537344 started    PING2 12844             7660       nvtray.exe
+1477664278911542016 started    PING2 9000              3736       conhost.exe
+1477664278911542016 started    PING2 948               13888      dllhost.exe
+1477664278911542016 started    PING2 12664             9000       observable_win_process.exe
+1477664278911541760 stopped    PING2 0                 6028       consent.exe
+1477664278910555648 started    PING2 948               5344       dllhost.exe
 ```
 
 Example limiting the query to a time frame and a certain process:
