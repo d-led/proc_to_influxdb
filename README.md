@@ -14,7 +14,7 @@ create database processes
 
 and running the application (requires administration rights)
 
-query, in the InfluxDB UI ([@localhost](http://localhost:8083/)):
+query:
 
 ```
 > select * from processes..lifecycle order by time desc limit 10
